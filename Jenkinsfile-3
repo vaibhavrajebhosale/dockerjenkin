@@ -4,9 +4,8 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
-          git --version
           curl --version
-          ls /var/lib/tomcat*
+          ls /usr/local/tomcat/webapps/*
         '''
       }
     }
