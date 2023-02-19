@@ -5,10 +5,9 @@ FROM centos
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
-#RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
-RUN wget https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
+RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.5/bin/apache-tomcat-10.1.5.tar.gz
 RUN tar xvfz apache*.tar.gz
-RUN mv apache-tomcat-9.0.27/* /opt/tomcat/.
+RUN mv apache-tomcat-10.1.5/* /opt/tomcat/.
 RUN yum -y install java
 RUN java -version
 COPY /var/lib/jenkins/workspace/compilation/target/ABCtechnologies-1.war /opt/tomcat/webapps
