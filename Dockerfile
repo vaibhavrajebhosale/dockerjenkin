@@ -1,4 +1,4 @@
-FROM centos
+FROM redhat/ubi8
 
 #MAINTAINER hello@gritfy.com
 
@@ -8,8 +8,8 @@ WORKDIR /opt/tomcat
 RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.5/bin/apache-tomcat-10.1.5.tar.gz
 RUN tar xvfz apache*.tar.gz
 RUN mv apache-tomcat-10.1.5/* /opt/tomcat/.
-RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
-RUN dnf distro-sync
+#RUN dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
+#RUN dnf distro-sync
 RUN yum update
 RUN yum -y install java
 RUN java -version
