@@ -15,7 +15,7 @@ RUN yum -y install java
 RUN java -version
 RUN ls *
 #COPY /var/lib/jenkins/workspace/compilation/target/ABCtechnologies-1.war /opt/tomcat/webapps
-COPY ABCtechnologies-1.0.war /opt/tomcat/webapps
+#COPY ABCtechnologies-1.0.war /opt/tomcat/webapps
 WORKDIR /opt/tomcat/webapps
 RUN curl -O -L /opt/tomcat/webapps/ABCtechnologies-1.war
 
